@@ -19,13 +19,30 @@ public class TesteArrayList {
 		Conta cc2 = new ContaCorrente(11, 22);
 		lista.add(cc2);
 		
-		Conta cc3 = new ContaCorrente(11, 22);
+		System.out.println("Tamanho: " + lista.size());
 		
-		boolean existe = lista.contains(cc3);
-		System.out.println("Ja existe: " + existe);
+		Conta ref = lista.get(0);
+		
+		System.out.println(ref.getNumero());
+		
+		lista.remove(0);
+		System.out.println("Tamanho: " + lista.size());
+		
+		Conta cc3 = new ContaCorrente(11, 22);
+		lista.add(cc3);
+		
+		Conta cc4 = new ContaCorrente(11, 22);
+		lista.add(cc4);
+				
+		for (int i = 0; i < lista.size(); i++) {
+			Object oRef = lista.get(i);
+			System.out.println(oRef);
+		}
+		
+		System.out.println("--------------------");
 		
 		for (Conta conta : lista) {
-			System.out.println(conta);		
+			System.out.println(conta);
 		}
 		
 	}

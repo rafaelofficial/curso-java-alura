@@ -1,7 +1,5 @@
 package br.com.bytebank.banco.teste.util;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 

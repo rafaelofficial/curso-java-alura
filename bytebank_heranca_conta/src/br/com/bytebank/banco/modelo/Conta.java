@@ -9,7 +9,7 @@ import br.com.bytebank.banco.exceptions.SaldoInsuficienteException;
  * @version 0.1
  *
  */
-public abstract class Conta {
+public abstract class Conta extends Object implements Comparable<Conta> {
 
 	@DoublePositivo
 	protected double saldo;
@@ -110,9 +110,13 @@ public abstract class Conta {
 		return true;
 	}
 	
+	public int compareTo(Conta outro) {
+		return Double.compare(this.saldo, outro.saldo);
+	}
+	
 	@Override
 	public String toString() {
-		return "Numero: " + this.numero + ", Agencia: " + this.agencia;
+		return "Numero: " + this.numero + ", Agencia: " + this.agencia + ", Saldo: " + this.saldo;
 	}
 
 }

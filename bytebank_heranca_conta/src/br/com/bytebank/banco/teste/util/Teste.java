@@ -50,10 +50,8 @@ public class Teste {
 			System.out.println(conta);
 		}
 		
-		NumeroDaContaComparator comparator = new NumeroDaContaComparator();
-		TitularDaContaComparator titularComparator = new TitularDaContaComparator();
-		
-		lista.sort(titularComparator);
+//		NumeroDaContaComparator comparator = new NumeroDaContaComparator();
+		lista.sort(new TitularDaContaComparator());
 		
 		System.out.println("----------");
 
@@ -80,23 +78,6 @@ class NumeroDaContaComparator implements Comparator<Conta> {
 
 	@Override
 	public int compare(Conta o1, Conta o2) {
-		
-		if (o1.getNumero() < o2.getNumero()) {
-			return -1;
-		}
-		
-		if (o1.getNumero() > o2.getNumero()) {
-			return 1;
-		}
-		
-		return 0;
+		return Integer.compare(o1.getNumero(), o2.getNumero());
 	}
-	
 }
-
-
-
-
-
-
-
